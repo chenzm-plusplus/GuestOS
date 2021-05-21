@@ -29,8 +29,8 @@ pub fn sys_write(fd: usize, buf: *const u8, len: usize) -> isize {
     
     let (left,right) = current_user_stack_space();
     let (left2,right2) = app_address_space();
-    info!("current user stack space is...[{:#x},{:#x})",left,right);
-    info!("current app address space is...[{:#x},{:#x})",left2,right2);
+    trace!("current user stack space is...[{:#x},{:#x})",left,right);
+    trace!("current app address space is...[{:#x},{:#x})",left2,right2);
 
     match fd {
         FD_STDOUT => {
